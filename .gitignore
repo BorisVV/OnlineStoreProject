@@ -6,5 +6,6 @@ db.sqlite3
 *.sqlite3
 __pyc__
 *static
+venv
 
 
