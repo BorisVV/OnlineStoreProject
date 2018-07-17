@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'onlineshop',
+    'account',
 ]
 
 MESSAGE_TAGS = {
