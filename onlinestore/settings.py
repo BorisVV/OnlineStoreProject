@@ -116,8 +116,8 @@ USE_L10N = True
 USE_TZ = True
 
 LOGIN_URL = 'auth_login'
-LOGIN_REDIRECT_URL = 'product_list'
-LOGOUT_REDIRECT_URL = 'product_list'
+LOGIN_REDIRECT_URL = 'onlineshop:product_list'
+LOGOUT_REDIRECT_URL = 'auth_login'
 
 # Django registration redux settings
 SITE_ID = 1

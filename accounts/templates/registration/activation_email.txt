@@ -13,5 +13,5 @@ http://{{site.domain}}{% url 'registration_activate' activation_key %}
 
 {% blocktrans with site_name=site.name %}
 Sincerely,
-The Yelp Camp Team
+The Great Guys Online Shop
 {% endblocktrans %}
