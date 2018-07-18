@@ -1,1 +1,1 @@
-{% load i18n %}{% trans "[Yelp Camp] Please activate your account" %}
+{% load i18n %}{% trans "[Great Guys Online Shop] Please activate your account" %}

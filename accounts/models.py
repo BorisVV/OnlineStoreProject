@@ -6,4 +6,4 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=12, blank=True)
     location = models.CharField(max_length=30, blank=True)
-    date_of_birth = models.DateField(_('Birth date'), help_text="Please use the following format: <em>YYYY-MM-DD</em>.") # Help the user enter date.
+    date_of_birth = models.DateField(_('Birth date'), blank=True, null=True, help_text="Please use the following format: <em>YYYY-MM-DD</em>.") # Help the user enter date.
