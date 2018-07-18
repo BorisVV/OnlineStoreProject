@@ -19,15 +19,17 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # Application definition
 # added "registration" package for django-redux
 INSTALLED_APPS = [
+    'accounts',
+    'django.contrib.sites',
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
     'onlineshop',
-    'account',
-    'registration',
 ]
 
 MESSAGE_TAGS = {
@@ -113,6 +115,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGIN_URL = 'auth_login'
+LOGIN_REDIRECT_URL = 'product_list'
+LOGOUT_REDIRECT_URL = 'product_list'
+
+# Django registration redux settings
+SITE_ID = 1
+ACCOUNT_ACTIVATION_DAYS = 3
+DEFAULT_FROM_EMAIL = 'The Great Guys Online Store <noreply@greatguysonlinestore.com>'
+EMAIL_SUBJECT_PREFIX = '[GREAT GUY ONLINE SHOP]'
+
+EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'staticfiles')
 
@@ -121,10 +134,3 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = '/products/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'products/')
-
-#http://www.tangowithdjango.com/book17/chapters/login_redux.html
-REGISTRATION_OPEN = True                # If True, users can register
-ACCOUNT_ACTIVATION_DAYS = 7     # One-week activation window; you may, of course, use a different value.
-REGISTRATION_AUTO_LOGIN = True  # If True, the user will be automatically logged in.
-LOGIN_REDIRECT_URL = '/onlineshop/'  # The page you want users to arrive at after they successful log in
-LOGIN_URL = '/accounts/login/'  # The page users are directed to if they are not logged in,
