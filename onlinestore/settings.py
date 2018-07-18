@@ -17,7 +17,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
-
+# added "registration" package for django-redux
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'onlineshop',
     'account',
+    'registration',
 ]
 
 MESSAGE_TAGS = {
@@ -120,3 +121,10 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = '/products/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'products/')
+
+#http://www.tangowithdjango.com/book17/chapters/login_redux.html
+REGISTRATION_OPEN = True                # If True, users can register
+ACCOUNT_ACTIVATION_DAYS = 7     # One-week activation window; you may, of course, use a different value.
+REGISTRATION_AUTO_LOGIN = True  # If True, the user will be automatically logged in.
+LOGIN_REDIRECT_URL = '/onlineshop/'  # The page you want users to arrive at after they successful log in
+LOGIN_URL = '/accounts/login/'  # The page users are directed to if they are not logged in,
