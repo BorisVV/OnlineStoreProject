@@ -1,5 +1,5 @@
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <a class="navbar-brand" href="{% url 'onlineshop:product_list' %}">Home</a> 
+  <a class="navbar-brand" href="{% url 'onlineshop:product_list' %}">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,21 +10,21 @@
       </li>
       <li class="nav-item">
         {% if user.is_authenticated %}
-        <a class="nav-link" href="#">sigin as {{user.username }}</a>
+        <a class="nav-link" href="#">Login as {{user.username }}</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'auth_logout' %}">logout</a>
       </li>
       {% else %}
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'auth_login' %}">Sigin</a>
+        <a class="nav-link" href="{% url 'auth_login' %}">Login</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'registration_register' %}">Signup</a>
       </li>
       {% endif %}
     </ul>
-  </div>  
+  </div>
 </nav>
 {% if messages %}
     <div class="container">
